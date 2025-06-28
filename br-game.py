@@ -756,8 +756,6 @@ while True:
         while magazine > 0:
             player.items = getItemsPlayer(player)
             enemy.items = getItemsEnemy(enemy)
-            print("PLAYER'S ITEMS: " + str(player.items))
-            print("ENEMY'S ITEMS: " + str(enemy.items))
 
             turn_who = 0
 
@@ -765,7 +763,8 @@ while True:
                 magazine = 0
             else:
                 while turn_who == 0 and player.chugged == False and len(gun.bullets) > 0:
-                    print("you have: " + str(player.items))
+                    print("PLAYER'S ITEMS: " + str(player.items))
+                    print("ENEMY'S ITEMS: " + str(enemy.items))
                     choice = input("choose (0 - use item, 1 - fire): ")
                     if choice == "1":
                         fire_who = input("Fire in who? (0 - me, 1 - enemy): ")
@@ -835,4 +834,3 @@ while True:
                     #if player.chugged == True:
                     #    useBotAi(player, enemy, gun, turn_who, magazine)
                     turn_who = 0
-  
